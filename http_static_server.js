@@ -18,11 +18,10 @@ http.createServer(function (request, response) {
             var myRe = new RegExp("^" + urlObj.query["q"]);
             var jsonresult = [];
             for(var i = 0; i < cities.length; i++) {
-               console.log("I'm alive! 1");
+               console.log("city:   " + cities[i]);
                var result = cities[i].search(myRe);
-               console.log("I'm alive! 2"); 
+               console.log("result: " + result); 
                if(result != -1) {
-                  console.log("I'm in a loop!");
                   console.log(cities[i]);
                   jsonresult.push({city:cities[i]});
                } 
