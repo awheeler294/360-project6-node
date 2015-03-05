@@ -13,15 +13,15 @@ http.createServer(function (request, response) {
          else {
             var cities = data.toString().split("/n");
             var myRe = new RegExp("^" + urlObj.query["q"]);
-            var jsonresult = "";
-            
+            var jsonresult = [];
             for(var i = 0; i < cities.length; i++) {
                var result = cities[i].search(myRe); 
                if(result != -1) {
                   console.log(cities[i]);
                   jsonresult.push({city:cities[i]});
                } 
-            }
+            }   
+            console.log(jsonresult);
 
             console.log(JSON.stringify(jsonresult));
             response.writeHead(200);
