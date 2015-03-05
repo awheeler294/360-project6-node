@@ -12,14 +12,17 @@ http.createServer(function (request, response) {
          }
          else {
             var cities = data.toString().split("\n");
-            for(var i = 0; i < cities.length; i++) {
-               console.log(cities[i]);
-            }
+            // for(var i = 0; i < cities.length; i++) {
+            //    console.log(cities[i]);
+            // }
             var myRe = new RegExp("^" + urlObj.query["q"]);
             var jsonresult = [];
             for(var i = 0; i < cities.length; i++) {
-               var result = cities[i].search(myRe); 
+               console.log("I'm alive!");
+               var result = cities[i].search(myRe);
+               console.log("I'm alive!"); 
                if(result != -1) {
+                  console.log("I'm alive!");
                   console.log(cities[i]);
                   jsonresult.push({city:cities[i]});
                } 
