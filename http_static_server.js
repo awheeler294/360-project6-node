@@ -11,7 +11,10 @@ http.createServer(function (request, response) {
             throw err;
          }
          else {
-            var cities = data.toString().split("/n");
+            var cities = data.toString().split("\n");
+            // for(var i = 0; i < cities.length; i++) {
+            //    console.log(cities[i]);
+            // }
             var myRe = new RegExp("^" + urlObj.query["q"]);
             var jsonresult = [];
             for(var i = 0; i < cities.length; i++) {
